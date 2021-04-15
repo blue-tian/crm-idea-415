@@ -1,10 +1,11 @@
+#配置数据源
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/boot?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/crm?serverTimezone=Asia/Shanghai
     username: root
     password: 666
-
+#配置日志
 logging:
   level:
     com:
@@ -12,3 +13,5 @@ logging:
         guo: debug
   file:
     path: D:\logs\crm-logs\
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
