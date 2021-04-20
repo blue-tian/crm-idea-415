@@ -3,11 +3,11 @@ package com.bing.guo.domain.entity.base;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+
 @Data
 public class BaseEntity implements Serializable {
 
@@ -41,6 +41,14 @@ public class BaseEntity implements Serializable {
     @JsonIgnore
     private LocalDateTime updateTime;
 
-
+    private void setData() {
+        if (id == null) {
+            this.createBy=1L;
+            this.createTime=LocalDateTime.now();
+        } else {
+            this.updateBy=2L;
+            this.updateTime=LocalDateTime.now();
+        }
+    }
 
 }

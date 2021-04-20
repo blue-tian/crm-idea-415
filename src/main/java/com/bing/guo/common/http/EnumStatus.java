@@ -6,7 +6,6 @@ public enum EnumStatus {
     UPDATE_ERROR(40000,"修改数据失败");
     private int status;
     private String message;
-
     EnumStatus(int status, String message) {
         this.status = status;
         this.message = message;
